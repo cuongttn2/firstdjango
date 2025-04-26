@@ -18,6 +18,9 @@ db.sqlite3
 .idea/
 .vscode/
 
+# Ignore IDE run configurations (machine-specific)
+.run/
+
 # Ignore system files
 .DS_Store
 Thumbs.db
