@@ -1,19 +1,27 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="{% static 'mystyle.css' %}">
-  <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
+    <!--  tells Django that it should load the Bootstrap 5 module in this template.-->
+    {% load bootstrap5 %}
+    <!--  inserts the <link> element with the referral to the bootstrap stylesheet.-->
+    {% bootstrap_css %}
+    <!--  inserts the <script> element with the referral to the necessary javascript file-->
+    {% bootstrap_javascript %}
 </head>
 <body>
 
-<div class="topnav">
-  <a href="/">HOME</a> |
-  <a href="/members">MEMBERS</a>
+<div class="container">
+    <ul class="nav bg-info">
+        <li class="nav-item">
+            <a class="nav-link link-light" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-light" href="/members">MEMBERS</a>
+        </li>
+    </ul>
+    {% block content %}
+    {% endblock %}
 </div>
-
-{% block content %}
-{% endblock %}
-
 </body>
 </html>
